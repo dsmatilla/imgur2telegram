@@ -34,7 +34,7 @@ function getUrls($string) {
 
 function getSent() {
     $sent = array();
-    if(file_exists('sent.txt'))
+    if(file_exists(dirname(__FILE__).DIRECTORY_SEPARATOR.'sent.txt'))
         $content = file_get_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'sent.txt');
     $sent = explode("\n", $content);
     return $sent;
