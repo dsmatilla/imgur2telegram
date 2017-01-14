@@ -6,7 +6,7 @@
     $html = fetchUrl("http://imgur.com/hot/time");
     $urls = array_slice(getUrls($html), 2);
     $sent = getSent();
-    $to_send = array_slice(array_diff($urls, $sent), 0, $config['limit']);
+    $to_send = array_unique(array_slice(array_diff($urls, $sent), 0, $config['limit']));
     setSent($urls);
     
     foreach($to_send as $line) {
