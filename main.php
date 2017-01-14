@@ -35,11 +35,11 @@ function getUrls($string) {
 function getSent() {
     $sent = array();
     if(file_exists('sent.txt'))
-        $content = file_get_contents('sent.txt');
+        $content = file_get_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'sent.txt');
     $sent = explode("\n", $content);
     return $sent;
 }
 
 function setSent($url_array) {
-    file_put_contents('sent.txt', implode("\n",$url_array));
+    file_put_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'sent.txt', implode("\n",$url_array));
 }
